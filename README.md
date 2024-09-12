@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+Here's a tailored `README.md` for your text extractor dashboard based on your previous project details:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Text Extractor Dashboard
 
-In the project directory, you can run:
+This repository contains a complete text extraction tool with a user-friendly dashboard built using React.js for the frontend and a Python-based backend with MongoDB for data storage. The tool allows users to upload images, extract text using Optical Character Recognition (OCR), and store the extracted text in a database for future retrieval. It also includes functionality for specific data extraction from identity cards using the Machine-Readable Zone (MRZ) parsing technique.
 
-### `npm start`
+### Key Features:
+- **Image Upload**: Users can upload images to extract text.
+- **OCR Functionality**: Utilizes `Tesseract.js` for optical character recognition to extract text from uploaded images.
+- **Identity Card Data Extraction**: Extracts specific information from identity cards using MRZ parsing.
+- **Data Storage**: Stores extracted text in a MongoDB database for future access and management.
+- **Dashboard Interface**: Built with React.js, allowing users to interact with uploaded images, view extracted text, and manage data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Technologies Used:
+- **Frontend**: React.js (HTML, CSS, JavaScript)
+- **Backend**: Python (Flask/Node.js with Express), Tesseract.js for OCR, MRZ parsing for identity cards
+- **Database**: MongoDB for storing image and extracted text data
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation:
 
-### `npm test`
+#### 1. Clone the repository:
+```bash
+git clone https://github.com/Sadhu-07/image-dashboard.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 2. Frontend Setup:
+Navigate to the frontend directory and install the dependencies:
+```bash
+cd frontend
+npm install
+npm start
+```
 
-### `npm run build`
+#### 3. Backend Setup:
+Navigate to the backend directory and install the required Python packages:
+```bash
+cd backend
+pip install -r requirements.txt
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Alternatively, if using Node.js for the backend, install dependencies:
+```bash
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 4. MongoDB Setup:
+- Ensure that MongoDB is installed and running on your local machine or cloud service (e.g., MongoDB Atlas).
+- Update the MongoDB connection string in the backend configuration file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Usage:
+1. **Image Upload**: Users can upload images via the React.js dashboard.
+2. **Text Extraction**: Upon uploading, the backend processes the image using `Tesseract.js` and extracts the text.
+3. **Data Storage**: The extracted text is stored in MongoDB, along with metadata about the image.
+4. **Identity Card Parsing**: For images of identity cards, the MRZ parser extracts relevant details.
+5. **View Data**: Users can view all uploaded images and their corresponding extracted text in the dashboard.
 
-### `npm run eject`
+### Project Structure:
+```bash
+.
+├── frontend/                        # React.js frontend code
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── backend/                         # Python/Node.js backend code
+│   ├── app.py                       # Flask API (if using Python)
+│   ├── server.js                    # Node.js API (if using Express)
+│   └── requirements.txt/package.json # Dependencies
+├── models/                          # MongoDB models for image and text data
+└── README.md                        # Project documentation
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Endpoints:
+- **POST /upload**: Upload an image to extract text.
+- **GET /images**: Retrieve a list of all uploaded images and their extracted text.
+- **DELETE /images/:id**: Delete an image and its associated data from the database.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Example Workflow:
+1. User uploads an image via the dashboard.
+2. The backend processes the image using Tesseract.js and extracts text.
+3. Extracted data is stored in MongoDB.
+4. The user can view the image and extracted text on the dashboard.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### License:
+This project is licensed under the MIT License.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This `README.md` provides a complete description of your text extraction tool, including installation, usage instructions, and the tech stack used for both the frontend and backend.
